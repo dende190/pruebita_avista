@@ -1,0 +1,16 @@
+extends base.pug
+
+block content
+  h3
+    | Holiwis #{nombre}
+  p
+    | Te vamos a mostrar las polizas que tenemos para ver cual quieres comprar
+  div.contenedorPolizas
+    each poliza in polizas
+      div.polizas
+        h3.text-center= poliza.titulo
+        p= poliza.descripcion
+        div.text-center
+          button
+            a(href=`/polizas/${poliza.id}`)
+              | Mas Informacion

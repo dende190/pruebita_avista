@@ -1,0 +1,61 @@
+body p {
+  color: #555;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.boton {
+  height: 30px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #555;
+  border-radius: 8px;
+}
+
+.d-none {
+  display: none;
+}
+
+.correr:hover {
+  opacity: 0.3;
+}
+
+.elementoFormulario {
+  display: flex;
+  align-items: center;
+}
+
+.elementoFormulario p {
+  min-width: 50px;
+  margin-right: 20px;
+}
+
+.botonFormulario {
+  margin-top: 15px
+}
+
+.mb-5 {
+  margin-bottom: 15px;
+}
+
+.contenedorPolizas {
+  display: grid;
+  padding: 0 100px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.text-center {
+  text-align: center
+}

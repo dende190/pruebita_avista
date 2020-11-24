@@ -1,0 +1,79 @@
+extends base.pug
+
+block scripts
+  script(src='/js/mostrar_formulario.js', defer)
+
+block content
+  button.boton
+    a(href='/admin')
+      | Modulo adminstriador
+  p
+    | Te vamos a dar soluciones en tus préstamos y seguros cuando te jubiles ya
+    | seas una personas o una empresa grande o pequena.
+    | te protegemos contra la mayoría de los riesgos en tu negocio pueden ser:
+    | incendios, robos, responsabilidades.
+  button(id='mostrarFormulario', data-estado='0', class='boton')
+    | Suscribirse 🤔
+  form(
+    action='/guardarUsuario',
+    method='POST',
+    class='d-none',
+    id='formularioSucribirse'
+  )
+    div.elementoFormulario
+      p
+        | Nombrecito:
+      input(
+        type='text',
+        name='nombre',
+        placeholder='Nombrecito',
+        required='true'
+      )
+    div.elementoFormulario
+      p
+        | Correito:
+      input(
+        type='email',
+        name='correo',
+        placeholder='Correito',
+        required='true'
+      )
+    div.elementoFormulario
+      p
+        | Celular:
+      input(type='tel', name='celular', placeholder='Celular', required='true')
+    div.elementoFormulario.mb-5
+      select(class='boton', required='true', name='destino')
+        option(selected='true')
+          | Destino del credito
+        option(value=1)
+          | Ten
+        option(value=2)
+          | Twently
+        option(value=3)
+          | Thirty
+    div.elementoFormulario
+      select(class='boton', required='true', name='medio')
+        option(selected='true')
+          | Medio de contacto
+        option(value=1)
+          | Ten
+        option(value=2)
+          | Twently
+        option(value=3)
+          | Thirty
+    div.elementoFormulario
+      p
+        | Edad:
+      input(
+        type='number',
+        name='edad',
+        min='0',
+        max='200',
+        placeholder='edad'
+      )
+    div.botonFormulario
+      button.boton
+        | De one two threeee !!
+
+

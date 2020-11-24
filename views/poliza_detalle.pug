@@ -1,0 +1,16 @@
+extends base.pug
+
+block content
+  h3
+    | #{nombre} has tomado la mejor decision !!
+  div.text-center
+    div.polizas
+      h3.text-center= poliza.titulo
+      p= poliza.descripcion
+      p= poliza.precio
+      form(action='/venderPoliza', method='POST', id='formularioVenta')
+        input(type='hidden', name='precio', value=`${poliza.precio}`)
+        input(type='hidden', name='usuarioId', value=`${usuarioId}`)
+        input(type='hidden', name='polizaId', value=`${poliza.id}`)
+        button.boton
+          | 🥳🥳🥳 COMPRAR 🥳🥳🥳

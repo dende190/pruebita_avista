@@ -1,0 +1,62 @@
+extends base.pug
+
+block scripts
+  script(src='/js/mostrar_tablas_admin.js', defer)
+
+block content
+  div
+    button.boton
+      a(href='/')
+        | Volver
+  br
+  button#jsBotonUsuario
+    | Usuarios
+  button#jsBotonVentas
+    | Ventas
+  div.d-none#tablaUsuarios
+    table
+      thead
+        tr
+          th
+            | Id
+          th
+            | Nombre
+          th
+            | Correo
+          th
+            | Celular
+          th
+            | Destino Id
+          th
+            | Medio Id
+          th
+            | Edad
+      tbody
+        each usuario in usuarios
+          tr
+            td= usuario.id
+            td= usuario.nombre
+            td= usuario.correo
+            td= usuario.celular
+            td= usuario.destinoId
+            td= usuario.medioId
+            td= usuario.edad
+  div.d-none#tablaVentas
+    table
+      thead
+        tr
+          th
+            | Id
+          th
+            | Poliza Id
+          th
+            | Precio
+          th
+            | Comprador Id
+      tbody
+        each venta in ventas
+          tr
+            td= venta.id
+            td= venta.polizaId
+            td= venta.precio
+            td= venta.usuarioId
